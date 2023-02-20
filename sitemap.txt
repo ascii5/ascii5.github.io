@@ -1,3 +1,4 @@
+http://ascii5.github.io/2023/02/20/cpp11/
 http://ascii5.github.io/2023/02/19/she-ji-mo-shi-gai-shu/
 http://ascii5.github.io/2023/02/18/test/
 http://ascii5.github.io/404/index.html
@@ -8,4 +9,6 @@ http://ascii5.github.io/2023/02/18/hello-world/
 http://ascii5.github.io/
 http://ascii5.github.io/tags/test/
 http://ascii5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+http://ascii5.github.io/tags/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/
 http://ascii5.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+http://ascii5.github.io/categories/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/

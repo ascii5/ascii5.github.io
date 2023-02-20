@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>cpp11特性(稳定性和兼容性)</title>
+      <link href="/2023/02/20/cpp11/"/>
+      <url>/2023/02/20/cpp11/</url>
+      
+        <content type="html"><![CDATA[<h1 id="cpp-11新特性-稳定性和兼容性"><a href="#cpp-11新特性-稳定性和兼容性" class="headerlink" title="cpp 11新特性(稳定性和兼容性)"></a>cpp 11新特性(稳定性和兼容性)</h1><h2 id="1，原始字面量"><a href="#1，原始字面量" class="headerlink" title="1，原始字面量"></a>1，原始字面量</h2><h3 id="1-1，简介"><a href="#1-1，简介" class="headerlink" title="1.1，简介"></a>1.1，简介</h3><blockquote><p>cpp 11提供了原始字面量R来表达不需要转义的的字符串</p></blockquote><h3 id="1-2，注意事项"><a href="#1-2，注意事项" class="headerlink" title="1.2，注意事项"></a>1.2，注意事项</h3><ul><li>原始字面量可在括号前后加上字符不会被处理，但是两边需一致</li></ul><h3 id="1-3，代码"><a href="#1-3，代码" class="headerlink" title="1.3，代码"></a>1.3，代码</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>     string str <span class="token operator">=</span> <span class="token string">"D:\hello\world\test.text"</span><span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> str <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    string str1 <span class="token operator">=</span> <span class="token string">"D:\\hello\\world\\test.text"</span><span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> str1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    string str2 <span class="token operator">=</span> <span class="token raw-string string">R"(D:\hello\world\test.text)"</span><span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> str2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    string str3 <span class="token operator">=</span> <span class="token raw-string string">R"hello(D:\hello\world\test.text)hello"</span><span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> str3 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="2，超长整形-longlong"><a href="#2，超长整形-longlong" class="headerlink" title="2，超长整形 longlong"></a>2，超长整形 longlong</h2><h3 id="2-1，简介"><a href="#2-1，简介" class="headerlink" title="2.1，简介"></a>2.1，简介</h3><blockquote></blockquote><h3 id="2-2，注意事项"><a href="#2-2，注意事项" class="headerlink" title="2.2，注意事项"></a>2.2，注意事项</h3><h3 id="2-3，代码"><a href="#2-3，代码" class="headerlink" title="2.3，代码"></a>2.3，代码</h3><h2 id="3，类成员的快速初始化"><a href="#3，类成员的快速初始化" class="headerlink" title="3，类成员的快速初始化"></a>3，类成员的快速初始化</h2><h3 id="3-1，简介"><a href="#3-1，简介" class="headerlink" title="3.1，简介"></a>3.1，简介</h3><h3 id="3-2，注意事项"><a href="#3-2，注意事项" class="headerlink" title="3.2，注意事项"></a>3.2，注意事项</h3><h3 id="3-3，代码"><a href="#3-3，代码" class="headerlink" title="3.3，代码"></a>3.3，代码</h3><h2 id="4，final和override"><a href="#4，final和override" class="headerlink" title="4，final和override"></a>4，final和override</h2><h3 id="4-1，简介"><a href="#4-1，简介" class="headerlink" title="4.1，简介"></a>4.1，简介</h3><h3 id="4-2，注意事项"><a href="#4-2，注意事项" class="headerlink" title="4.2，注意事项"></a>4.2，注意事项</h3><h3 id="4-3，代码"><a href="#4-3，代码" class="headerlink" title="4.3，代码"></a>4.3，代码</h3><h2 id="5，模板的优化"><a href="#5，模板的优化" class="headerlink" title="5，模板的优化"></a>5，模板的优化</h2><h3 id="5-1，简介"><a href="#5-1，简介" class="headerlink" title="5.1，简介"></a>5.1，简介</h3><h3 id="5-2，注意事项"><a href="#5-2，注意事项" class="headerlink" title="5.2，注意事项"></a>5.2，注意事项</h3><h3 id="5-3，代码"><a href="#5-3，代码" class="headerlink" title="5.3，代码"></a>5.3，代码</h3><h2 id="6，数值类型和字符串的转化"><a href="#6，数值类型和字符串的转化" class="headerlink" title="6，数值类型和字符串的转化"></a>6，数值类型和字符串的转化</h2><h3 id="6-1，简介"><a href="#6-1，简介" class="headerlink" title="6.1，简介"></a>6.1，简介</h3><h3 id="6-2，注意事项"><a href="#6-2，注意事项" class="headerlink" title="6.2，注意事项"></a>6.2，注意事项</h3><h3 id="6-3，代码"><a href="#6-3，代码" class="headerlink" title="6.3，代码"></a>6.3，代码</h3><h2 id="7，静态断言"><a href="#7，静态断言" class="headerlink" title="7，静态断言"></a>7，静态断言</h2><h3 id="7-1，简介"><a href="#7-1，简介" class="headerlink" title="7.1，简介"></a>7.1，简介</h3><h3 id="7-2，注意事项"><a href="#7-2，注意事项" class="headerlink" title="7.2，注意事项"></a>7.2，注意事项</h3><h3 id="7-3，代码"><a href="#7-3，代码" class="headerlink" title="7.3，代码"></a>7.3，代码</h3><h2 id="8，noexcept"><a href="#8，noexcept" class="headerlink" title="8，noexcept"></a>8，noexcept</h2><h3 id="8-1，简介"><a href="#8-1，简介" class="headerlink" title="8.1，简介"></a>8.1，简介</h3><h3 id="8-2，注意事项"><a href="#8-2，注意事项" class="headerlink" title="8.2，注意事项"></a>8.2，注意事项</h3><h3 id="8-3，代码"><a href="#8-3，代码" class="headerlink" title="8.3，代码"></a>8.3，代码</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> cpp 11新特性 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cpp 11新特性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设计模式概述</title>
       <link href="/2023/02/19/she-ji-mo-shi-gai-shu/"/>
       <url>/2023/02/19/she-ji-mo-shi-gai-shu/</url>
