@@ -1,3 +1,4 @@
+http://ascii5.github.io/contact/index.html
 http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/
 http://ascii5.github.io/2023/02/23/cpp-11-xin-te-xing-tong-yong-xing-neng-de-ti-sheng/
 http://ascii5.github.io/2023/02/22/cpp-11-yi-xue-he-yi-yong-xing/
@@ -8,7 +9,7 @@ http://ascii5.github.io/about/index.html
 http://ascii5.github.io/categories/index.html
 http://ascii5.github.io/tags/index.html
 http://ascii5.github.io/
-http://ascii5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
 http://ascii5.github.io/tags/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/
-http://ascii5.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+http://ascii5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
 http://ascii5.github.io/categories/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/
+http://ascii5.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
