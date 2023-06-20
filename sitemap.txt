@@ -1,3 +1,4 @@
+http://ascii5.github.io/2023/06/20/cmake-bi-ji/
 http://ascii5.github.io/2023/06/02/xiao-lin-tu-jie-wang-luo-bi-ji/
 http://ascii5.github.io/2023/06/01/leetcode-jian-zhi-offer-ti-jie-er/
 http://ascii5.github.io/2023/04/26/leetcode-jian-zhi-offer/
@@ -17,7 +18,9 @@ http://ascii5.github.io/tags/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/
 http://ascii5.github.io/tags/uml%E7%B1%BB%E5%9B%BE/
 http://ascii5.github.io/tags/leetcode%E9%A2%98%E8%A7%A3/
 http://ascii5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+http://ascii5.github.io/tags/CMake/
 http://ascii5.github.io/categories/cpp-11%E6%96%B0%E7%89%B9%E6%80%A7/
 http://ascii5.github.io/categories/uml%E7%B1%BB%E5%9B%BE/
 http://ascii5.github.io/categories/leetcode%E9%A2%98%E8%A7%A3/
 http://ascii5.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+http://ascii5.github.io/categories/CMake/
