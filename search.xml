@@ -2642,4 +2642,241 @@ libhello<span class="token punctuation">.</span>so<span class="token punctuation
         <tag>CMake</tag>
       </tags>
   </entry>
+  <entry>
+    <title>常用通配符</title>
+    <url>/2023/07/07/chang-yong-tong-pei-fu/</url>
+    <content><![CDATA[<h1 id="常用通配符"><a href="#常用通配符" class="headerlink" title="常用通配符"></a>常用通配符</h1><table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配任意长度的任意字符</td>
+<td>wh*  -&gt; who,what</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配单个任意字符</td>
+<td>wh? -&gt; who</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>匹配括号里的任意字符</td>
+<td>b[ae]ll -&gt; ball,bell</td>
+</tr>
+<tr>
+<td>!</td>
+<td>匹配括号里面没有出现的字符</td>
+<td>b[!ae]ll -&gt; bill</td>
+</tr>
+<tr>
+<td>-</td>
+<td>匹配升序范围的字符</td>
+<td>b[a-c]d -&gt; bad,bbd,bcd</td>
+</tr>
+<tr>
+<td>#</td>
+<td>匹配任何单个的数字字符</td>
+<td>1#3 -&gt; 103,113</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>计算机常识</category>
+      </categories>
+      <tags>
+        <tag>常用通配符</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高数下册笔记</title>
+    <url>/2023/06/23/gao-shu-xia-ce-bi-ji/</url>
+    <content><![CDATA[<h1 id="高数下册"><a href="#高数下册" class="headerlink" title="高数下册"></a>高数下册</h1><h2 id="第一章-无穷级数"><a href="#第一章-无穷级数" class="headerlink" title="第一章 无穷级数"></a>第一章 无穷级数</h2><h3 id="无穷级数的概念和性质"><a href="#无穷级数的概念和性质" class="headerlink" title="无穷级数的概念和性质"></a>无穷级数的概念和性质</h3><p>1.无穷级数(常数项)的概念</p>
+<blockquote>
+<p>类似于u1 + u2 + u3 + … + un + … 这种无穷项数的和</p>
+</blockquote>
+<p>2.部分和</p>
+<blockquote>
+<p>其中在u1 + u2 + u3 + … + un 这种到un的和称为该无穷级数的部分和</p>
+</blockquote>
+<p>3.敛散性</p>
+<blockquote>
+<p>如果该级数的部分和存在极限就称为是收敛的，不存在极限就称为发散的</p>
+</blockquote>
+<p>4.性质</p>
+<ul>
+<li><p>等比级数公比小于1收敛，大于等于1发散</p>
+</li>
+<li><p>如果常数项级数un收敛他的和为l，呢么常数项级数kun也一定收敛他的和为kl</p>
+</li>
+<li><p>两个常数项级数(收敛)想加减，他的加减后的常数项级数也是收敛的且这个常数项级数的和为他们原来两个常数项级数的和相加减</p>
+</li>
+<li><p>常数项级数加减有限项，敛散性不变</p>
+</li>
+<li><p>当一个常数项级数收敛则该级数的一般项极限趋于0(相反则不成立)，但是如果一个常数项级数的一般项级数不趋于0，该常数项级数一定发散</p>
+</li>
+<li><p>一个常数项级数收敛，则它加上括号也是收敛(相反则不行)，但是一个常数项级数加上括号后发散，则没加括号时也是发散的</p>
+</li>
+</ul>
+<h3 id="无穷级数的审敛法"><a href="#无穷级数的审敛法" class="headerlink" title="无穷级数的审敛法"></a>无穷级数的审敛法</h3><p>正项级数的审敛法</p>
+<ul>
+<li>根本审敛法 -&gt; 部分和有界，即部分和公式存在极限</li>
+<li>比较审敛法-&gt; 较小的级数发散呢么较大的级数也发散，较大的级数收敛呢么较小的级数也收敛</li>
+<li>比值审敛法-&gt;u(n+1)/un 的极限小于1则级数收敛，u(n+1)/un 的级数大于1级数发散，=1时即可能发散也可能收敛 </li>
+<li>根值审敛法-&gt;根号下un的极限小于1则级数收敛，根号下(u(n+1))的级数大于1级数发散，=1时即可能发散也可能收敛</li>
+</ul>
+<p>交错级数的审敛法</p>
+<ul>
+<li>莱布尼茨公式</li>
+</ul>
+<blockquote>
+<p>如果un &gt;= u(n+1) 且 un求极限为0 呢么该交错级数收敛</p>
+</blockquote>
+<p>绝对收敛和条件收敛</p>
+<blockquote>
+<p>绝对收敛：如果一个级数加上绝对值后收敛呢么这个级数称为绝对收敛(此时该级数必然收敛)</p>
+<p>条件收敛：如果一个级数本身收敛加上绝对值后发散，呢么这个级数称为条件收敛</p>
+</blockquote>
+<h3 id="幂级数"><a href="#幂级数" class="headerlink" title="幂级数"></a>幂级数</h3><p>幂级数的概念</p>
+<blockquote>
+<p> 如a1x的1次方 + … + anxn+…这种</p>
+<p>an是常数</p>
+</blockquote>
+<p>函数项级数</p>
+<blockquote>
+<p>每一项均为关于x的函数</p>
+</blockquote>
+<p>函数和</p>
+<blockquote>
+<p>函数项级数部分和</p>
+</blockquote>
+<p>收敛域求法</p>
+<blockquote>
+<p>u(n+1)/un求极限出l,1/l即为收敛半径</p>
+<p>再求端点的·敛散性</p>
+<p>最终得到收敛半径</p>
+</blockquote>
+<h2 id="向量代数和空间解析几何"><a href="#向量代数和空间解析几何" class="headerlink" title="向量代数和空间解析几何"></a>向量代数和空间解析几何</h2><h3 id="向量的基础知识"><a href="#向量的基础知识" class="headerlink" title="向量的基础知识"></a>向量的基础知识</h3><p>1.向量及向量相关的概念</p>
+<blockquote>
+<p>略</p>
+</blockquote>
+<p>2.向量的基本运算</p>
+<blockquote>
+<p>与自然数的基本运算基本一致</p>
+</blockquote>
+<p>3.向量的方向余弦，方向角，投影</p>
+<blockquote>
+<p>方向余弦 cos α = x / 向量的模</p>
+<p>方向余弦 cos β = y / 向量的模</p>
+<p>方向余弦 cos γ = z / 向量的模</p>
+<p>投影: 向量a在om上的投影= |a| * cos α(α为向量a和向量om的夹角)</p>
+</blockquote>
+<h3 id="向量的运算"><a href="#向量的运算" class="headerlink" title="向量的运算"></a>向量的运算</h3><p>1.向量的数量积</p>
+<blockquote>
+<p>a . b = |a| . |b| . cos α</p>
+<p>ax + bx + ay + by + az + bz(使用坐标表示)</p>
+</blockquote>
+<p>2.向量的向量积</p>
+<blockquote>
+<p>a . b = |a| . |b| .sin α</p>
+<p>使用行列式计算</p>
+</blockquote>
+<p>3.向量的混合积</p>
+<blockquote>
+<p>混合积为0 向量共面</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>ax</th>
+<th>ay</th>
+<th>az</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bx</td>
+<td>by</td>
+<td>bz</td>
+</tr>
+<tr>
+<td>cx</td>
+<td>cy</td>
+<td>cz</td>
+</tr>
+</tbody></table>
+<h3 id="平面方程"><a href="#平面方程" class="headerlink" title="平面方程"></a>平面方程</h3><p>1.平面的点法式方程</p>
+<p>2.平面的一般性方程</p>
+<blockquote>
+<p>Ax + By + Cz + D = 0</p>
+<p>法向量为(A，B，C)</p>
+</blockquote>
+<p>3.平面的截距方程</p>
+<blockquote>
+<p>x / a + y / b + z / c = 1</p>
+</blockquote>
+<p>4.两平面的夹角</p>
+<blockquote>
+<p>两平面垂直，则对应法向量相垂直，它的数量积为0</p>
+<p>两平面平行，则对应法向量成比例</p>
+</blockquote>
+<p>5.点到平面的距离公示</p>
+<blockquote>
+<p>(Ax + By + Cz + D) / A^2 + B ^2 + C ^2</p>
+</blockquote>
+<h2 id="空间直线和其一般方程"><a href="#空间直线和其一般方程" class="headerlink" title="空间直线和其一般方程"></a>空间直线和其一般方程</h2>]]></content>
+  </entry>
+  <entry>
+    <title>陈硕muduo多线程服务器编程</title>
+    <url>/2023/06/08/chen-shuo-muduo-duo-xian-cheng-fu-wu-qi-bian-cheng/</url>
+    <content><![CDATA[<h2 id="blockingqueue"><a href="#blockingqueue" class="headerlink" title="blockingqueue"></a>blockingqueue</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;mutex&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;condition_variable&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;thread&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">blockingQueue</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">&gt;</span><span class="token function">lock</span><span class="token punctuation">(</span>mutexForque<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>myQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            cond<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span>lock<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">]</span><span class="token punctuation">{</span> 
+                <span class="token keyword">return</span> <span class="token operator">!</span>myQueue<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> top <span class="token operator">=</span> myQueue<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myQueue<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> top<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        unique_lock<span class="token operator">&lt;</span>mutex<span class="token operator">&gt;</span><span class="token function">lock</span><span class="token punctuation">(</span>mutexForque<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myQueue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cond<span class="token punctuation">.</span><span class="token function">notify_one</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    mutex mutexForque<span class="token punctuation">;</span>
+    condition_variable cond<span class="token punctuation">;</span>
+    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> myQueue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    blockingQueue myqueue<span class="token punctuation">;</span>
+    thread <span class="token function">thread1</span><span class="token punctuation">(</span>blockingQueue<span class="token double-colon punctuation">::</span>dequeue<span class="token punctuation">,</span><span class="token operator">&amp;</span>myqueue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread <span class="token function">thread2</span><span class="token punctuation">(</span>blockingQueue<span class="token double-colon punctuation">::</span>dequeue<span class="token punctuation">,</span><span class="token operator">&amp;</span>myqueue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    myqueue<span class="token punctuation">.</span><span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    myqueue<span class="token punctuation">.</span><span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    thread2<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"all threads are completed !"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>多线程</category>
+      </categories>
+      <tags>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
 </search>
