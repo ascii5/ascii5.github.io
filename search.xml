@@ -2879,4 +2879,15 @@ libhello<span class="token punctuation">.</span>so<span class="token punctuation
         <tag>多线程</tag>
       </tags>
   </entry>
+  <entry>
+    <title>linux下的服务器程序</title>
+    <url>/2023/07/09/linux-xia-de-fu-wu-qi-cheng-xu/</url>
+    <content><![CDATA[<h1 id="linux下的服务器编程"><a href="#linux下的服务器编程" class="headerlink" title="linux下的服务器编程"></a>linux下的服务器编程</h1><h2 id="1-sock函数"><a href="#1-sock函数" class="headerlink" title="1.sock函数"></a>1.sock函数</h2><h2 id="2-bind函数"><a href="#2-bind函数" class="headerlink" title="2.bind函数"></a>2.bind函数</h2><h2 id="3-listen函数"><a href="#3-listen函数" class="headerlink" title="3.listen函数"></a>3.listen函数</h2><h2 id="4-accept函数"><a href="#4-accept函数" class="headerlink" title="4.accept函数"></a>4.accept函数</h2>]]></content>
+      <categories>
+        <category>网络编程</category>
+      </categories>
+      <tags>
+        <tag>网络编程</tag>
+      </tags>
+  </entry>
 </search>
