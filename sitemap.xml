@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ascii5.github.io/2023/07/15/duo-lu-io-fu-yong-ji-zhu/</loc>
+    
+    <lastmod>2023-07-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ascii5.github.io/2023/07/09/linux-xia-de-fu-wu-qi-cheng-xu/</loc>
     
     <lastmod>2023-07-08</lastmod>
@@ -237,6 +246,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://ascii5.github.io/tags/%E5%A4%9A%E8%B7%AFio/</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -290,6 +306,13 @@
   
   <url>
     <loc>http://ascii5.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2023-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ascii5.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
