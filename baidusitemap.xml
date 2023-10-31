@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://ascii5.github.io/2023/07/15/duo-lu-io-fu-yong-ji-zhu/</loc>
-    <lastmod>2023-08-26</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/02/20/cpp11/</loc>
-    <lastmod>2023-08-01</lastmod>
+    <loc>http://ascii5.github.io/2023/04/25/uml-lei-tu/</loc>
+    <lastmod>2023-10-31</lastmod>
   </url>
   <url>
     <loc>http://ascii5.github.io/2023/07/09/linux-xia-de-fu-wu-qi-cheng-xu/</loc>
-    <lastmod>2023-07-08</lastmod>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/04/26/leetcode-jian-zhi-offer/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/02/20/cpp11/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/02/23/cpp-11-xin-te-xing-tong-yong-xing-neng-de-ti-sheng/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/02/22/cpp-11-yi-xue-he-yi-yong-xing/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/06/20/cmake-bi-ji/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/02/19/she-ji-mo-shi-gai-shu/</loc>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/06/23/gao-shu-xia-ce-bi-ji/</loc>
+    <lastmod>2023-10-31</lastmod>
   </url>
   <url>
     <loc>http://ascii5.github.io/2023/06/08/chen-shuo-muduo-duo-xian-cheng-fu-wu-qi-bian-cheng/</loc>
-    <lastmod>2023-07-07</lastmod>
+    <lastmod>2023-10-31</lastmod>
+  </url>
+  <url>
+    <loc>http://ascii5.github.io/2023/07/15/duo-lu-io-fu-yong-ji-zhu/</loc>
+    <lastmod>2023-10-31</lastmod>
   </url>
   <url>
     <loc>http://ascii5.github.io/2023/07/07/chang-yong-tong-pei-fu/</loc>
     <lastmod>2023-07-07</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/06/23/gao-shu-xia-ce-bi-ji/</loc>
-    <lastmod>2023-06-24</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/06/20/cmake-bi-ji/</loc>
-    <lastmod>2023-06-20</lastmod>
   </url>
   <url>
     <loc>http://ascii5.github.io/2023/06/02/xiao-lin-tu-jie-wang-luo-bi-ji/</loc>
@@ -35,29 +59,5 @@
   <url>
     <loc>http://ascii5.github.io/2023/06/01/leetcode-jian-zhi-offer-ti-jie-er/</loc>
     <lastmod>2023-06-01</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/04/26/leetcode-jian-zhi-offer/</loc>
-    <lastmod>2023-05-01</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/04/25/uml-lei-tu/</loc>
-    <lastmod>2023-04-29</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/</loc>
-    <lastmod>2023-03-05</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/02/23/cpp-11-xin-te-xing-tong-yong-xing-neng-de-ti-sheng/</loc>
-    <lastmod>2023-03-03</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/02/22/cpp-11-yi-xue-he-yi-yong-xing/</loc>
-    <lastmod>2023-02-22</lastmod>
-  </url>
-  <url>
-    <loc>http://ascii5.github.io/2023/02/19/she-ji-mo-shi-gai-shu/</loc>
-    <lastmod>2023-02-21</lastmod>
   </url>
 </urlset> 
