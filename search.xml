@@ -544,7 +544,7 @@ map<span class="token operator">&lt;</span><span class="token keyword">int</span
   <entry>
     <title>智能指针</title>
     <url>/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/</url>
-    <content><![CDATA[<h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>智能指针是cpp11新特性中重要的部分，共有到三种智能指针,<code>shared_ptr</code>,<code>unique_ptr</code>,<code>weak_ptr</code>,本文介绍了他们的概念，注意事项和使用示例</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>智能指针是cpp11新特性中重要的部分，共有到三种智能指针,<code>shared_ptr</code>,<code>unique_ptr</code>,<code>weak_ptr</code>,本文介绍了他们的概念，注意事项和使用示例</p>
 <span id="more"></span>
 
 <h2 id="1-共享智能指针"><a href="#1-共享智能指针" class="headerlink" title="1 共享智能指针"></a>1 共享智能指针</h2><h3 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h3><blockquote>
