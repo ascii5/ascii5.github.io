@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ascii5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="cpp 11新特性(安全性)1 共享智能指针1.1 概念 智能指针是用来自动释放堆区的内存，共享智能指针可以使得多个智能指针指向同一块内存  1.2 注意 智能指针的实现是内部实现了一个计数器，当该地址被智能指针指向时计数器+1，当计数器为0时，便会调用删除器删除该堆区内存">
+    <meta name="description" content="智能指针前言智能指针是cpp11新特性中重要的部分，共有到三种智能指针,shared_ptr,unique_ptr,weak_ptr,本文介绍了他们的概念，注意事项和使用示例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cpp 11新特性(安全性)">
+<meta property="og:title" content="智能指针">
 <meta property="og:url" content="http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/index.html">
 <meta property="og:site_name" content="skarry">
-<meta property="og:description" content="cpp 11新特性(安全性)1 共享智能指针1.1 概念 智能指针是用来自动释放堆区的内存，共享智能指针可以使得多个智能指针指向同一块内存  1.2 注意 智能指针的实现是内部实现了一个计数器，当该地址被智能指针指向时计数器+1，当计数器为0时，便会调用删除器删除该堆区内存">
+<meta property="og:description" content="智能指针前言智能指针是cpp11新特性中重要的部分，共有到三种智能指针,shared_ptr,unique_ptr,weak_ptr,本文介绍了他们的概念，注意事项和使用示例">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-03T14:29:45.000Z">
-<meta property="article:modified_time" content="2023-10-31T04:05:09.170Z">
+<meta property="article:modified_time" content="2023-11-30T11:06:48.295Z">
 <meta property="article:author" content="skarry">
 <meta property="article:tag" content="cpp 11新特性">
 <meta name="twitter:card" content="summary">
@@ -37,10 +37,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/","path":"2023/03/03/cpp-11-xin-te-xing-an-quan-xing/","title":"cpp 11新特性(安全性)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ascii5.github.io/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/","path":"2023/03/03/cpp-11-xin-te-xing-an-quan-xing/","title":"智能指针"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>cpp 11新特性(安全性) | skarry</title>
+<title>智能指针 | skarry</title>
   
 
 
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cpp-11%E6%96%B0%E7%89%B9%E6%80%A7-%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">cpp 11新特性(安全性)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.1.</span> <span class="nav-text">1 共享智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%8B%AC%E5%8D%A0%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.2.</span> <span class="nav-text">2 独占智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BC%B1%E5%BC%95%E7%94%A8%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.3.</span> <span class="nav-text">3 弱引用智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%B1%E4%BA%AB%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.2.</span> <span class="nav-text">1 共享智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%8B%AC%E5%8D%A0%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.3.</span> <span class="nav-text">2 独占智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BC%B1%E5%BC%95%E7%94%A8%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.4.</span> <span class="nav-text">3 弱引用智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E5%BF%B5-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.1 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E6%84%8F-2"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.2 注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">1.4.3.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="cpp 11新特性(安全性) | skarry">
+      <meta itemprop="name" content="智能指针 | skarry">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          cpp 11新特性(安全性)
+          智能指针
         </h1>
 
         <div class="post-meta-container">
@@ -231,7 +231,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 12:05:09" itemprop="dateModified" datetime="2023-10-31T12:05:09+08:00">2023-10-31</time>
+      <time title="修改时间：2023-11-30 19:06:48" itemprop="dateModified" datetime="2023-11-30T19:06:48+08:00">2023-11-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,14 +252,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="cpp-11新特性-安全性"><a href="#cpp-11新特性-安全性" class="headerlink" title="cpp 11新特性(安全性)"></a>cpp 11新特性(安全性)</h1><h2 id="1-共享智能指针"><a href="#1-共享智能指针" class="headerlink" title="1 共享智能指针"></a>1 共享智能指针</h2><h3 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h3><blockquote>
+    <div class="post-body" itemprop="articleBody"><h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>智能指针是cpp11新特性中重要的部分，共有到三种智能指针,<code>shared_ptr</code>,<code>unique_ptr</code>,<code>weak_ptr</code>,本文介绍了他们的概念，注意事项和使用示例</p>
+<span id="more"></span>
+
+<h2 id="1-共享智能指针"><a href="#1-共享智能指针" class="headerlink" title="1 共享智能指针"></a>1 共享智能指针</h2><h3 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h3><blockquote>
 <p>智能指针是用来自动释放堆区的内存，共享智能指针可以使得多个智能指针指向同一块内存</p>
 </blockquote>
 <h3 id="1-2-注意"><a href="#1-2-注意" class="headerlink" title="1.2 注意"></a>1.2 注意</h3><ul>
 <li>智能指针的实现是内部实现了一个计数器，当该地址被智能指针指向时计数器+1，当计数器为0时，便会调用删除器删除该堆区内存</li>
 </ul>
-<span id="more"></span>
-
 <h3 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">class</span> <span class="token class-name">test</span><span class="token punctuation">{</span>
