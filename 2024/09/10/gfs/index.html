@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ascii5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="uml类图1. 箭头类型1.1 泛化 通常用于继承关系  1.2 实现 通常用于接口类和实现类之间">
+    <meta name="description" content="Goog File SystemGFS简介Google file system 可以简写为GFS，该系统是google 开发的一个分布式文件存储系统 GFS整体架构GFS存在三个节点分别是client,master,chunkserver,负责功能如下：  client: 负责和应用程序的交互，提供接口  master:管理元数据(文件和chunk的namespace,文件到chunk的映射，ch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="uml类图">
-<meta property="og:url" content="http://ascii5.github.io/2023/04/25/uml-lei-tu/index.html">
+<meta property="og:title" content="GFS">
+<meta property="og:url" content="http://ascii5.github.io/2024/09/10/gfs/index.html">
 <meta property="og:site_name" content="skarry">
-<meta property="og:description" content="uml类图1. 箭头类型1.1 泛化 通常用于继承关系  1.2 实现 通常用于接口类和实现类之间">
+<meta property="og:description" content="Goog File SystemGFS简介Google file system 可以简写为GFS，该系统是google 开发的一个分布式文件存储系统 GFS整体架构GFS存在三个节点分别是client,master,chunkserver,负责功能如下：  client: 负责和应用程序的交互，提供接口  master:管理元数据(文件和chunk的namespace,文件到chunk的映射，ch">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-25T11:00:17.000Z">
-<meta property="article:modified_time" content="2023-10-31T04:05:46.428Z">
+<meta property="article:published_time" content="2024-09-10T13:44:25.000Z">
+<meta property="article:modified_time" content="2024-09-12T14:42:05.264Z">
 <meta property="article:author" content="skarry">
-<meta property="article:tag" content="uml类图">
+<meta property="article:tag" content="mit6.824">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://ascii5.github.io/2023/04/25/uml-lei-tu/">
+<link rel="canonical" href="http://ascii5.github.io/2024/09/10/gfs/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ascii5.github.io/2023/04/25/uml-lei-tu/","path":"2023/04/25/uml-lei-tu/","title":"uml类图"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ascii5.github.io/2024/09/10/gfs/","path":"2024/09/10/gfs/","title":"GFS"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>uml类图 | skarry</title>
+<title>GFS | skarry</title>
   
 
 
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#uml%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">uml类图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%AE%AD%E5%A4%B4%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">1. 箭头类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%B3%9B%E5%8C%96"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 泛化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%85%B3%E8%81%94"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E8%81%9A%E5%90%88"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-%E7%BB%84%E5%90%88"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6 组合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.2.</span> <span class="nav-text">2. 类图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E7%B1%BB%E6%88%90%E5%91%98"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 类成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 类方法</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Goog-File-System"><span class="nav-number">1.</span> <span class="nav-text">Goog File System</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">GFS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">GFS整体架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E5%AD%98%E5%82%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">GFS存储设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E9%AB%98%E5%8F%AF%E7%94%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">GFS高可用设计</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#GFS-Master%E9%AB%98%E5%8F%AF%E7%94%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.0.0.4.0.1.</span> <span class="nav-text">GFS Master高可用设计</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#chunk%E9%AB%98%E5%8F%AF%E7%94%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.0.0.4.0.2.</span> <span class="nav-text">chunk高可用设计</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">GFS读文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GFS%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">GFS写文件</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ascii5.github.io/2023/04/25/uml-lei-tu/">
+    <link itemprop="mainEntityOfPage" href="http://ascii5.github.io/2024/09/10/gfs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="uml类图 | skarry">
+      <meta itemprop="name" content="GFS | skarry">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          uml类图
+          GFS
         </h1>
 
         <div class="post-meta-container">
@@ -224,23 +224,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-04-25 19:00:17" itemprop="dateCreated datePublished" datetime="2023-04-25T19:00:17+08:00">2023-04-25</time>
+      <time title="创建时间：2024-09-10 21:44:25" itemprop="dateCreated datePublished" datetime="2024-09-10T21:44:25+08:00">2024-09-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-31 12:05:46" itemprop="dateModified" datetime="2023-10-31T12:05:46+08:00">2023-10-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/uml%E7%B1%BB%E5%9B%BE/" itemprop="url" rel="index"><span itemprop="name">uml类图</span></a>
-        </span>
+      <time title="修改时间：2024-09-12 22:42:05" itemprop="dateModified" datetime="2024-09-12T22:42:05+08:00">2024-09-12</time>
     </span>
 
   
@@ -252,36 +243,41 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="uml类图"><a href="#uml类图" class="headerlink" title="uml类图"></a>uml类图</h1><h2 id="1-箭头类型"><a href="#1-箭头类型" class="headerlink" title="1. 箭头类型"></a>1. 箭头类型</h2><h3 id="1-1-泛化"><a href="#1-1-泛化" class="headerlink" title="1.1 泛化"></a>1.1 泛化</h3><blockquote>
-<p>通常用于继承关系</p>
-</blockquote>
-<h3 id="1-2-实现"><a href="#1-2-实现" class="headerlink" title="1.2 实现"></a>1.2 实现</h3><blockquote>
-<p>通常用于接口类和实现类之间</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="1-3-依赖"><a href="#1-3-依赖" class="headerlink" title="1.3 依赖"></a>1.3 依赖</h3><blockquote>
-<p>在一个类的方法传入参数中传入了另外一个类</p>
-</blockquote>
-<h3 id="1-4-关联"><a href="#1-4-关联" class="headerlink" title="1.4 关联"></a>1.4 关联</h3><blockquote>
-<p>在一个类中拥有类外一个成员类</p>
-</blockquote>
-<h3 id="1-5-聚合"><a href="#1-5-聚合" class="headerlink" title="1.5 聚合"></a>1.5 聚合</h3><blockquote>
-<p>强的关联关系，表示的是整体和个体的关系</p>
-</blockquote>
-<h3 id="1-6-组合"><a href="#1-6-组合" class="headerlink" title="1.6 组合"></a>1.6 组合</h3><blockquote>
-<p>是比聚合关系更强的关联关系</p>
-</blockquote>
-<h2 id="2-类图"><a href="#2-类图" class="headerlink" title="2. 类图"></a>2. 类图</h2><h3 id="2-1-类成员"><a href="#2-1-类成员" class="headerlink" title="2.1 类成员"></a>2.1 类成员</h3><blockquote>
+    <div class="post-body" itemprop="articleBody"><h1 id="Goog-File-System"><a href="#Goog-File-System" class="headerlink" title="Goog File System"></a>Goog File System</h1><h4 id="GFS简介"><a href="#GFS简介" class="headerlink" title="GFS简介"></a>GFS简介</h4><p>Google file system 可以简写为GFS，该系统是google 开发的一个分布式文件存储系统</p>
+<h4 id="GFS整体架构"><a href="#GFS整体架构" class="headerlink" title="GFS整体架构"></a>GFS整体架构</h4><p>GFS存在三个节点分别是client,master,chunkserver,负责功能如下：</p>
 <ul>
-<li>+号 表示公开权限</li>
-<li>-号 表示隐私权限</li>
-<li>#号 表示保护权限</li>
+<li><p>client: 负责和应用程序的交互，提供接口</p>
+</li>
+<li><p>master:管理元数据(文件和chunk的namespace,文件到chunk的映射，chunk的位置等)</p>
+</li>
+<li><p>chunkserver:存储chunk数据</p>
+</li>
 </ul>
-</blockquote>
-<h3 id="2-2-类方法"><a href="#2-2-类方法" class="headerlink" title="2.2 类方法"></a>2.2 类方法</h3><blockquote>
-<p>与类成员相同冒号后面跟着的是返回值</p>
-</blockquote>
+<h4 id="GFS存储设计"><a href="#GFS存储设计" class="headerlink" title="GFS存储设计"></a>GFS存储设计</h4><p>文件切分为多个chunk存储在chunkserver中</p>
+<p>chunk分为一个primary chunk和两个second chunk为备份文件</p>
+<p>chunk的大小设计为64mb，有以下优点</p>
+<ul>
+<li>减少系统的寻址和交互次数</li>
+<li>可能会在一个chunk中进行多次操作，可以复用tcp连接</li>
+<li>节省元数据的存储开销，减轻master内存压力</li>
+</ul>
+<h4 id="GFS高可用设计"><a href="#GFS高可用设计" class="headerlink" title="GFS高可用设计"></a>GFS高可用设计</h4><h6 id="GFS-Master高可用设计"><a href="#GFS-Master高可用设计" class="headerlink" title="GFS Master高可用设计"></a>GFS Master高可用设计</h6><p>GFS Master持续化存储元数据namespace，文件到chunk的映射</p>
+<p>维持一个shadow Master作为备份，当primary Master宕机时通过Chubby自动切换</p>
+<p>primary Master和primary Master通过同步日志(wal)进行同步数据</p>
+<h6 id="chunk高可用设计"><a href="#chunk高可用设计" class="headerlink" title="chunk高可用设计"></a>chunk高可用设计</h6><p>每个chunk都有三个副本，每个副本数据完整，只有三个副本均写入完成时才算写入成功，且相同的副本不会放入同一个chunkserver中</p>
+<p>如果一个chunk宕机了一段时间，master就会在另外一个chunkserver中重建副本</p>
+<p>GFS维持chunk的校验和，如果校验和不匹配则master会重建chunk副本</p>
+<p>为了减轻Master压力，GFS使用租约指定chunk副本(primary chunk)进行写操作的控制</p>
+<h4 id="GFS读文件"><a href="#GFS读文件" class="headerlink" title="GFS读文件"></a>GFS读文件</h4><p>client首先查看自身缓存是否有对应的元数据，若没有向Master查询</p>
+<p>计算偏移对应的chunk</p>
+<p>向距离最近的chunkserver发出读请求</p>
+<p>对比校验和，若校验和不正确则切换chunkserver</p>
+<h4 id="GFS写文件"><a href="#GFS写文件" class="headerlink" title="GFS写文件"></a>GFS写文件</h4><p>client向master 查询primary chunk和second chunk位置</p>
+<p>使用流水线技术将数据推送到所有副本chunk上</p>
+<p>primary chunk 进行数据操作排序并写入</p>
+<p>primary chunk 将顺序同步到 所有的second chunk中</p>
+<p>second chunk 写入完成将结果返回 primary chunk</p>
+<p>primary chunk 将结果返回client</p>
 
     </div>
 
@@ -291,21 +287,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/uml%E7%B1%BB%E5%9B%BE/" rel="tag"># uml类图</a>
+              <a href="/tags/mit6-824/" rel="tag"># mit6.824</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/03/cpp-11-xin-te-xing-an-quan-xing/" rel="prev" title="智能指针">
-                  <i class="fa fa-angle-left"></i> 智能指针
+                <a href="/2023/07/15/duo-lu-io-fu-yong-ji-zhu/" rel="prev" title="多路io复用技术">
+                  <i class="fa fa-angle-left"></i> 多路io复用技术
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/06/20/cmake-bi-ji/" rel="next" title="CMake笔记">
-                  CMake笔记 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
