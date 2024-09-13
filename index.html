@@ -227,7 +227,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-12 22:42:05" itemprop="dateModified" datetime="2024-09-12T22:42:05+08:00">2024-09-12</time>
+      <time title="修改时间：2024-09-13 21:38:10" itemprop="dateModified" datetime="2024-09-13T21:38:10+08:00">2024-09-13</time>
     </span>
 
   
@@ -241,41 +241,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="Goog-File-System"><a href="#Goog-File-System" class="headerlink" title="Goog File System"></a>Goog File System</h1><h4 id="GFS简介"><a href="#GFS简介" class="headerlink" title="GFS简介"></a>GFS简介</h4><p>Google file system 可以简写为GFS，该系统是google 开发的一个分布式文件存储系统</p>
-<h4 id="GFS整体架构"><a href="#GFS整体架构" class="headerlink" title="GFS整体架构"></a>GFS整体架构</h4><p>GFS存在三个节点分别是client,master,chunkserver,负责功能如下：</p>
-<ul>
-<li><p>client: 负责和应用程序的交互，提供接口</p>
-</li>
-<li><p>master:管理元数据(文件和chunk的namespace,文件到chunk的映射，chunk的位置等)</p>
-</li>
-<li><p>chunkserver:存储chunk数据</p>
-</li>
-</ul>
-<h4 id="GFS存储设计"><a href="#GFS存储设计" class="headerlink" title="GFS存储设计"></a>GFS存储设计</h4><p>文件切分为多个chunk存储在chunkserver中</p>
-<p>chunk分为一个primary chunk和两个second chunk为备份文件</p>
-<p>chunk的大小设计为64mb，有以下优点</p>
-<ul>
-<li>减少系统的寻址和交互次数</li>
-<li>可能会在一个chunk中进行多次操作，可以复用tcp连接</li>
-<li>节省元数据的存储开销，减轻master内存压力</li>
-</ul>
-<h4 id="GFS高可用设计"><a href="#GFS高可用设计" class="headerlink" title="GFS高可用设计"></a>GFS高可用设计</h4><h6 id="GFS-Master高可用设计"><a href="#GFS-Master高可用设计" class="headerlink" title="GFS Master高可用设计"></a>GFS Master高可用设计</h6><p>GFS Master持续化存储元数据namespace，文件到chunk的映射</p>
-<p>维持一个shadow Master作为备份，当primary Master宕机时通过Chubby自动切换</p>
-<p>primary Master和primary Master通过同步日志(wal)进行同步数据</p>
-<h6 id="chunk高可用设计"><a href="#chunk高可用设计" class="headerlink" title="chunk高可用设计"></a>chunk高可用设计</h6><p>每个chunk都有三个副本，每个副本数据完整，只有三个副本均写入完成时才算写入成功，且相同的副本不会放入同一个chunkserver中</p>
-<p>如果一个chunk宕机了一段时间，master就会在另外一个chunkserver中重建副本</p>
-<p>GFS维持chunk的校验和，如果校验和不匹配则master会重建chunk副本</p>
-<p>为了减轻Master压力，GFS使用租约指定chunk副本(primary chunk)进行写操作的控制</p>
-<h4 id="GFS读文件"><a href="#GFS读文件" class="headerlink" title="GFS读文件"></a>GFS读文件</h4><p>client首先查看自身缓存是否有对应的元数据，若没有向Master查询</p>
-<p>计算偏移对应的chunk</p>
-<p>向距离最近的chunkserver发出读请求</p>
-<p>对比校验和，若校验和不正确则切换chunkserver</p>
-<h4 id="GFS写文件"><a href="#GFS写文件" class="headerlink" title="GFS写文件"></a>GFS写文件</h4><p>client向master 查询primary chunk和second chunk位置</p>
-<p>使用流水线技术将数据推送到所有副本chunk上</p>
-<p>primary chunk 进行数据操作排序并写入</p>
-<p>primary chunk 将顺序同步到 所有的second chunk中</p>
-<p>second chunk 写入完成将结果返回 primary chunk</p>
-<p>primary chunk 将结果返回client</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/09/10/gfs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

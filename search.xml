@@ -2406,6 +2406,8 @@ DecoratorStream<span class="token operator">:</span> <span class="token keyword"
     <title>GFS</title>
     <url>/2024/09/10/gfs/</url>
     <content><![CDATA[<h1 id="Goog-File-System"><a href="#Goog-File-System" class="headerlink" title="Goog File System"></a>Goog File System</h1><h4 id="GFS简介"><a href="#GFS简介" class="headerlink" title="GFS简介"></a>GFS简介</h4><p>Google file system 可以简写为GFS，该系统是google 开发的一个分布式文件存储系统</p>
+<span id="more"></span>
+
 <h4 id="GFS整体架构"><a href="#GFS整体架构" class="headerlink" title="GFS整体架构"></a>GFS整体架构</h4><p>GFS存在三个节点分别是client,master,chunkserver,负责功能如下：</p>
 <ul>
 <li><p>client: 负责和应用程序的交互，提供接口</p>
